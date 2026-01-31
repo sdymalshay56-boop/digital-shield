@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>الدرع الرقمي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background-pattern">
+    <div class="shape square s1"></div>
+    <div class="shape square s2"></div>
+    <div class="shape square s3"></div>
+    <div class="triangle t1"></div>
+    <div class="triangle t2"></div>
+</div>
+
+<div class="top-bar">
+    مرحبًا بك في الدرع الرقمي
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <h3>👤 اللاعب</h3>
+        <div class="stat">الاسم: <span id="player-name">---</span></div>
+        <div class="stat">🛡️ الدرع: <span id="shield">برونزي</span></div>
+        <div class="stat">⭐ المستوى: <span id="level">1</span></div>
+        <div class="stat">🎯 النقاط: <span id="points">0</span></div>
+        <div class="stat">✔️ صحيحة: <span id="correct">0</span> ❌ خاطئة: <span id="wrong">0</span></div>
+        <div class="stat">📚 الجلسات المكتملة: <span id="sessions">0</span></div>
+    </div>
+
+    <div class="main">
+        <div class="card" id="welcome-card">
+            <h2>مرحبًا بك</h2>
+            <p>من فضلك أدخل اسمك للبدء:</p>
+            <input type="text" id="name-input">
+            <div class="button" onclick="startGame()">دخول</div>
+        </div>
+
+        <div id="levels-container">
+            <div class="level-box">
+                <h3>المستوى البرونزي</h3>
+                <p>10 أسئلة – سهل</p>
+                <div class="btn-level" onclick="startSession(1)">ابدأ الجلسة</div>
+            </div>
+
+            <div class="level-box">
+                <h3>المستوى الفضي</h3>
+                <p>10 أسئلة – متوسط</p>
+                <div class="btn-level" onclick="startSession(2)">ابدأ الجلسة</div>
+            </div>
+
+            <div class="level-box">
+                <h3>المستوى الذهبي</h3>
+                <p>10 أسئلة – صعب</p>
+                <div class="btn-level" onclick="startSession(3)">ابدأ الجلسة</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="level-popup">
+    <h1 id="popup-text">🎉 تم اجتياز المستوى بنجاح 🎉</h1>
+</div>
+
+<canvas id="confetti"></canvas>
+<audio id="success-sound" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
